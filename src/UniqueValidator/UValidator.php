@@ -13,7 +13,7 @@ use UniqueValidator\Cache;
 
 use parser\Parser;
 
-use Exception;
+use \Exception;
 
 
 /**
@@ -57,8 +57,11 @@ class UValidator
 			
 			$this->formParser = new FormParser($parser,$formId);				
 			$parsedArray = $this->formParser->parse($formFile);
-			
-			$this->cache->set($formUrl, $this->formParser);
+			try {
+				$this->cache->set($formUrl, $this->formParser);
+			}catch(Exception $e){
+				die("ERROR: ".$e->getMessage());	
+			}
 		} else {	
 			$parsedArray =  $this->formParser->getParsedArray();
 		}

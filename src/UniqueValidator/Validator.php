@@ -7,7 +7,7 @@
 namespace UniqueValidator;
 
 use UniqueValidator\AbstractValidator;
-use Exception;
+use \Exception;
 
 include_once __DIR__ ."/AbstractValidator.php";
 

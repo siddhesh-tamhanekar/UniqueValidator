@@ -53,6 +53,7 @@ if(isset($_POST['submit'])){
 			</div>
 		</header>
 		<div class="container" >
+		<p>if script is not working please trying to set proper permissions to uniquevalidator directory.</p>
 			<form  novalidate id='demoForm' method="post" action="">
 				<div class="col-6">
 				

@@ -6,6 +6,7 @@
 
 namespace UniqueValidator;
 
+use Exception;
 /**
  * Cache : simple cache class for storing cache and retrieving it.
  */
