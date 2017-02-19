@@ -37,10 +37,10 @@ class UValidator
 		$this->cache->setCacheDir("../cache");
 		$this->cacheDisabled = true;
 		$this->validator = new Validator($this->config); 
-		$this->checkReuirements();
+		$this->checkRequirements();
 	}
 	
-	private function checkReuirements()
+	private function checkRequirements()
 	{
 		$requirments = array();
 		if(!class_exists("DOMDocument"))
@@ -49,8 +49,10 @@ class UValidator
 			$requirments[] = "<li>DOMXpath class is required and it's missing and it's missing in your PHP Installation</li>";
 		if(!is_writable("../cache"))
 			$requirments[] = "<li>Cache directory is not writable under UniqueValidator. please give appropriate permissions to directory</li>";
+		if($requirments) {
 
-		die("There is some problems please look at them carefully<br/><ul>".implode("",$requirments)."</ul>");
+			die("There is some problems please look at them carefully<br/><ul>".implode("",$requirments)."</ul>");
+		}
 	}		
 	public function validate($formUrl,$customMessages = null)
 	{
